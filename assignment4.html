@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4</title>
+    <style>
+        table {
+            margin: auto;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+
+        .bold-text {
+            text-align: center;
+        }
+
+        .mandatory-field {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" class="bold-text"><b>XYZ Online Delivery</b></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bold-text"><b>Personal Details</b></td>
+            </tr>
+            <tr>
+                <td><label for="username">First Name</label><span class="mandatory-field">*</span></td>
+                <td><input type="text" id="username" name="username" maxlength="20" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone Number</label><span class="mandatory-field">*</span></td>
+                <td><input type="number" id="phone" name="phone" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bold-text"><b>Order Preferences</b></td>
+            </tr>
+            <tr>
+                <td><label for="size">Size</label><span class="mandatory-field">*</span></td>
+                <td><input type="radio" id="size" name="size" required>Small
+                    <input type="radio" id="size" name="size">Medium
+                    <input type="radio" id="size" name="size">Large
+                </td>
+            </tr>
+            <tr>
+                <td><label for="base">Base</label><span class="mandatory-field">*</span></td>
+                <td><select name="details" id="details" required>
+                        <option value="csc">Chicken Stuffed Crust</option>
+                        <option value="pp">Pan Pizza</option>
+                        <option value="cc">Cheese Crust</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="toppings">Toppings</label></td>
+                <td><input type="checkbox" id="toppings" name="toppings">Cheese
+                    <input type="checkbox" id="toppings" name="toppings">Olives
+                    <input type="checkbox" id="toppings" name="toppings">Tomatos
+                    <input type="checkbox" id="toppings" name="toppings">Capsicum
+                    <input type="checkbox" id="toppings" name="toppings">Jalapenos</br>
+                    <input type="checkbox" id="toppings" name="toppings">Mushrooms
+                    <input type="checkbox" id="toppings" name="toppings">Pepperoni
+                    <input type="checkbox" id="toppings" name="toppings">Onion
+                </td>
+            </tr>
+            <tr>
+                <td><label for="info">Additional Details</label></td>
+                <td><textarea rows="2" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bold-text"><b>Confirm Details and Proceed to Pay ?
+                        <input type="radio" id="confirm" name="confirm">Yes
+                        <input type="radio" id="confirm" name="confirm">No
+                    </b></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bold-text"><button><b>Submit</b></button></td>
+            </tr>
+        </table>
+    </form>
+</body>

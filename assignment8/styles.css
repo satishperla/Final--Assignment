@@ -1,0 +1,57 @@
+.container {
+    background-color: aqua;
+    padding: 30px;
+    width: fit-content;
+    margin: auto;
+}
+
+.flexarea {
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+h3 {
+    margin-bottom: 50px;
+}
+
+.formarea {
+    padding: 50px;
+    background-color: white;
+}
+
+.detailsarea {
+    padding: 50px;
+    background-color: blue;
+    color: white;
+}
+
+td {
+    padding: 20px;
+}
+
+.messagearea {
+    padding: 20px;
+}
+
+.buttonarea {
+    padding-left: 20px;
+}
+button{
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+}
+
+.text-line {
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #000000 2px;
+    padding: 3px 10px;
+}
