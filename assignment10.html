@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Assignment 10</title>
+
+    <style>
+        .container {
+            margin: auto;
+            width: 800px;
+            height: auto;
+            padding: 30px;
+            color: white;
+            background-color: black;
+        }
+
+        .inner-container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .header,
+        .footer {
+            background-color: rgb(54, 168, 249);
+            box-shadow: 4px 4px 8px black;
+            border-radius: 5px;
+            padding: 20px 35px;
+        }
+
+        .content {
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .main {
+            width: 75%;
+            padding: 20px 10px;
+            background-color: rgb(90, 236, 90);
+            box-shadow: 2px 2px 3px black;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .item-box {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            width: 40px;
+            height: 20px;
+            background-color: rgb(61, 155, 61);
+            border-radius: 5px;
+            box-shadow: 2px 2px 3px black;
+            padding: 30px;
+            font-weight: 500;
+            margin: 20px;
+        }
+
+        .sidebar {
+            background-color: rgb(235, 69, 69);
+            box-shadow: 2px 2px 2px black;
+            margin-left: 10px;
+            width: 20%;
+            padding-top: 10px;
+            border-radius: 5px;
+        }
+
+        p {
+            text-align: left;
+            margin-left: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <div class="header">Header</div>
+            <div class="content">
+                <div class="main">
+                    <p>Main</p>
+                    <div class="item-box">
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                        <div class="item">item</div>
+                    </div>
+                </div>
+                <div class="sidebar">Sidebar</div>
+
+            </div>
+            <div class="footer">Footer</div>
+        </div>
+    </div>
+</body>
+
+</html>
