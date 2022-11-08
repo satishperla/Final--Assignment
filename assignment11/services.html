@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Services Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .navbar,
+        footer {
+            background-color: rgb(20, 143, 237);
+        }
+
+        footer p {
+            align-content: center;
+            margin: auto;
+            margin-left: 35%;
+            padding: 15px;
+            color: white;
+        }
+
+        .offer {
+            color: red;
+        }
+
+        p {
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            border: 2px solid black;
+            padding: 10px 0px;
+        }
+
+        img {
+            width: 325px;
+            height: 250px;
+        }
+
+        .desc {
+            margin: 20px;
+        }
+
+        .card h4,
+        .card p {
+            text-align: center;
+        }
+
+        button {
+            margin-left: 35%;
+            background-color: rgb(40, 132, 230);
+            color: white;
+        }
+
+        .offer {
+            margin: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar  navbar-default">
+        <div class="container-fluid ">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AutoMob-Mechanic</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">Hi Johnson</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="#">Logout</a></li>
+                <li><a href="#">contact@automob.co.in <span class="glyphicon glyphicon-envelope"></span></a></li>
+                <li><a href="#">999-999-9999<span class="glyphicon glyphicon-phone"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1><b>Car Repair and Service</b></h1>
+        <p>Our representatives professionaly trained and skilled latest and futuristic techniques to provide a best
+            quality service.</p>
+        <p>At AutoMob-Mechanic, we provide a high class service to the customers for thier happy and memorable driving
+            experience.</p>
+        <div class="flex-container"></div>
+        <div class="offer">**Offer ends in :<span class="timer"></span></div>
+    </div>
+    <footer class="d-flex justify-content-center">
+        <p>Copyright &copy; 2020 AutoMob-Mechanic. All Rights Reserved.</p>
+    </footer>
+    <script>
+        let arr = [{
+            service: "Preventive Maintainence Services",
+            imgSrc: "car-repair-service1.png",
+            desc: "Periodically check and keep you car running",
+            discount: "20%",
+        }, {
+            service: "Body Repair Services",
+            imgSrc: "car-repair-service2.png",
+            desc: "Full chasis body repair provided by the experts",
+            discount: "10%",
+        }, {
+            service: "Car Care Services",
+            imgSrc: "car-repair-service3.png",
+            desc: "Get your car sparking clean in just minutes",
+            discount: "15%",
+        }];
+        var services = "";
+        arr.map((item) => {
+            services += `
+						<div class='card'>
+							<h4 class="service"><strong>${item.service}</strong></h4>
+							<img src='${item.imgSrc}'alt=""/>
+							<p class="desc">${item.desc}</p>
+							<p>
+								<i>Offer: ${item.discount}</i>
+							</p>
+							<button onClick="move_to_report()">More Details</button>
+						</div>`;
+        });
+        document.querySelector(".flex-container").innerHTML = services;
+
+        function move_to_report() {
+            location.assign("reports.html");
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = minutes + ":" + seconds;
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            var tenMins = 60 * 10,
+                display = document.querySelector('.timer');
+            startTimer(tenMins, display);
+        };
+    </script>
+
+</body>
+
+</html>

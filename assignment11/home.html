@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .navbar,
+        footer,
+        button {
+            background-color: rgb(20, 143, 237);
+            color: white;
+        }
+
+        footer p {
+            align-content: center;
+            margin: auto;
+            margin-left: 40%;
+            padding: 20px;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        img {
+            width: 550px;
+            height: 500px;
+        }
+
+        .content {
+            margin-left: 30px;
+        }
+
+        p {
+            margin: 15px 0px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar  navbar-default">
+        <div class="container-fluid ">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AutoMob-Mechanic</a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">Hi Johnson</a></li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a href="#">Logout</a></li>
+                <li><a href="#">contact@automob.co.in <span class="glyphicon glyphicon-envelope"></span></a></li>
+                <li><a href="#">999-999-9999<span class="glyphicon glyphicon-phone"></span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="picture">
+            <img src="car.jpg">
+        </div>
+        <div class="content">
+            <h2><b>About Us</b></h2>
+            <p> "One stop solution to get your car repaired and serviced." </p>
+            <p>At AutoMob-Mechanic, we aim to make the car repair and service experience straight forward by providing
+                services for car repairing, servicing and maintaining - lending our expertise in all forms. </p>
+            <h3><b>How it works?</b></h4>
+                <h4><b>Choose the service</b></h4>
+                <p>Choose the perfect service for your car.</p>
+                <h4><b>Book an Appointment</b></h4>
+                <p>Book an appointment with us on your convenient date.</p>
+                <h4><b>Get your Car Fixed</b></h4>
+                <p>No need to wait, our representative will take care of everything on their own.</p>
+                <button onclick="explore()">Explore More</button>
+        </div>
+
+    </div>
+    <footer class="d-flex justify-content-center">
+        <p>Copyright &copy; 2020 AutoMob-Mechanic. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function explore() {
+            location.assign("services.html");
+        }
+    </script>
+
+</body>
+
+</html>
