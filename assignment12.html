@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assignment 12</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .table-container {
+            margin: auto;
+            margin-left: 30%;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        tr {
+            border-bottom: 1px solid grey;
+            border-top: 1px solid grey;
+
+        }
+
+        th,
+        td {
+            padding: 15px 25px;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="table-container">
+        <div class="container"></div>
+
+    </div>
+    <script>
+        let arr = [
+            {
+                name: "Satinder",
+                gender: "Male",
+                city: "Hyderabad"
+
+            },
+            {
+                name: "Raj",
+                gender: "Male",
+                city: "Chennai"
+
+            },
+            {
+                name: "Andrea",
+                gender: "Female",
+                city: "Rio"
+
+            },
+            {
+                name: "Amit Sarma",
+                gender: "Male",
+                city: "Navi Mumbai"
+
+            },
+            {
+                name: "David Miller",
+                gender: "Male",
+                city: "Scotland"
+
+            }
+        ]
+
+        var customers = "";
+        customers += `
+                              <table>
+                                     <th>Name</th>
+                                      <th>Gender</th>
+                                      <th>City</th>
+                                      <th>Action</th>`;
+
+        arr.map((i) => {
+            customers += `
+                                      <tr id="item">
+                                          <td>${i.name}</td>
+                                          <td>${i.gender}</td>
+                                          <td>${i.city}</td>
+                                          <td><button onclick="deleteRow()">Delete</button> </td>
+                                      </tr>`;
+        });
+        customers += `
+                              </table>`;
+        document.querySelector(".container").innerHTML = customers;
+
+        function deleteRow() {
+            const element = document.getElementById("item");
+            element.remove();
+        }
+
+    </script>
+
+</body>
+
+</html>
