@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment 15</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      
+      .container {
+        background: #1e1f26;
+        height: 65px;
+      }
+      .container > h1 {
+        padding: 0;
+        text-align: center;
+        color: #fff;
+        font-weight: 700;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        line-height: 35px;
+      }
+      #code {
+        bottom: 0;
+        position: relative;
+        width: 100%;
+        height: 300px;
+        border: unset;
+        background-color: white;
+      }
+      .text-code {
+        min-height: 350px;
+        overflow-x: hidden;
+        width: 100%;
+        background: black;
+        color: white;
+      }
+      .compiler > div {
+        width: 100%;
+        border-left: 15px solid #555865;
+      }
+      
+      .compiler {
+        width: 100%;
+        height:400px;
+        min-height: 125px;
+        display: flex;
+        overflow: hidden;
+        border-bottom: 15px solid #555865;
+      }
+      .output {
+        height: 100%;
+      }
+      span {
+        width: 33%;
+        background-color: black;
+        display: inline-block;
+        color: white;
+      }
+      h3{
+        background-color: black;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      
+        <div class="boxes">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JS</span>
+          <div class="compiler">
+            <textarea id="html" class="text-code language-html"></textarea>
+            <textarea id="css" class="text-code language-css"></textarea>
+            <textarea id="js" class="text-code language-js"></textarea>
+          </div>
+
+          <div class="output">
+            <h3>Output Updated</h3>
+            <iframe id="code"></iframe>
+          </div>
+        </div>
+      
+    </div>
+
+    <script type="text/javascript" src="assignment15.js"></script>
+  </body>
+</html>
+
+
