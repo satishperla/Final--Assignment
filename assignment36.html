@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Details</title>
+    <style>
+        div#maincontent {
+            height: 100px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+            margin-left: 10px;
+        }
+
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 40px;
+            margin-left: 10px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+ 
+
+<body>
+    <div class="container">
+        <label for="count">Enter Number of persons: </label>
+        <input type="number" id="count" name="count"><br>
+        <button type="submit" onclick="bookTickets()">Book Tickets</button>
+
+    </div>
+    <div id="heading">
+          <h2>Booking Summary</h2>
+    </div>
+    <div id="maincontent">
+        <div id="ticketcount"></div>
+        <div id="totalCost"></div>
+        <div id="error"></div>
+
+    </div>
+    <script>
+
+        var tickets = parseInt(document.getElementById("count"));
+        function bookTickets() {
+            if (tickets > 5) {
+                return errorFunction();
+            }
+            else {
+                return calculateCost(tickets);
+            }
+
+        }
+
+        function calculateCost(seats) {
+            var seats = tickets;
+            var total_cost = seats * 9;
+            document.getElementById("totalCost").innerHTML = eval(total_cost);
+        }
+
+        function errorFunction() {
+            document.getElementById("error").innerHTML = "You cannot book more than 5 tickets";
+        }
+        //Write the code to display the discounted price on click of the text
+    </script>
+</body>
+
+</html>
