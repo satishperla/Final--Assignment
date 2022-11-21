@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Assignment 47</title>
+    <style>
+        .container {
+            margin: auto;
+            width: auto;
+            border: 2px solid black;
+            width: fit-content;
+        }
+
+        h2 {
+            margin-left: 20px;
+            color: rgb(71, 110, 238);
+        }
+
+        button {
+            margin-left: 20px;
+        }
+
+        td {
+            padding: 5px 20px;
+        }
+
+        #map-area {
+            width: 600px;
+            height: 400px;
+            margin: 0px 0px 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2> Register As A Developer</h2>
+        <form>
+            <table>
+                <tr>
+                    <td><label for="fname">First Name</label></td>
+                    <td><input type="text" id="fname"></td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name</label></td>
+                    <td><input type="text" id="lname"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" id="email"></td>
+                </tr>
+            </table>
+            <br>
+            <button type="button" onclick="getLocation()">Get Location</button>
+            <br>
+            <div id="map-area"></div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script src="https://maps.google.com/maps/api/js?sensor=false"> </script>
+
+    <script>
+        function getLocation() {
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showLocation, ErrorHandling);
+            }
+            else {
+                alert("This browser does not support GeoLocation API");
+            }
+        }
+
+        function showLocation(position) {
+            latt = position.coords.latitude;
+            long = position.coords.longitude;
+            var lattlong = new google.maps.LatLng(latt, long);
+            var myOptions = {
+                center: lattlong,
+                zoom: 15,
+                mapTypeControl: true,
+                navigationControlOptions: { style: google.maps.NavigationControlStyle.SMALL }
+            }
+            var maps = new google.maps.Map(document.getElementById("map-area"), myOptions);
+            var markers =
+                new google.maps.Marker({ position: lattlong, map: maps, title: "You are here!" });
+        }
+
+        function ErrorHandling(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("Permission Denied!!");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Position unavailable!!");
+                    break;
+                case error.TIMEOUT:
+                    alert("Request Timed Out!!");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("Unknown Error!!");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
